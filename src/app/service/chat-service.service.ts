@@ -10,7 +10,7 @@ export interface Message {
 })
 export class ChatServiceService {
 
-  private usersSource = new BehaviorSubject<string[]>(['User1', 'User2', 'User3',
+  private usersSource = new BehaviorSubject<string[]>(['User1', 'User2', 'User3']);
   users$ = this.usersSource.asObservable();
 
   private messagesSource = new BehaviorSubject<Message[]>([
@@ -23,8 +23,9 @@ export class ChatServiceService {
 
   sendMessage(from: string, text: string){
     const current = this.messagesSource.getValue();
-    this.messagesSource.next([current, {from, text }]);
+    // this.messagesSource.next([current, {from, text }]);
+    this.messagesSource.next([{from, text }]);
   }
-
+//current not readable here
   constructor() { }
 }

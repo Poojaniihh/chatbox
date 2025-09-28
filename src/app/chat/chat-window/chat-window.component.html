@@ -1,1 +1,8 @@
-<p>chat-window works!</p>
+<div class="chat-window">
+  <div *ngFor="let message of messages">
+    <strong>{{message.from}}: </strong>{{message.text}}
+  </div>
+</div>
+<!-- <ul *ngFor="#item of items; #i = index" data-index="#i">
+    <li>{{item}}</li>
+</ul> -->
